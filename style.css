@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 * {
     margin: 0;
@@ -48,6 +48,10 @@ body {
     transform: translateY(-3px);
 }
 
+.box.blur {
+    filter: blur(12px);
+}
+
 .box .card img {
     width: 250px;
     height: 250px;
@@ -90,16 +94,20 @@ body {
     transform: scale(1.03);
 }
 
+.showCard {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -48%);
+}
+
 .showCard .detailCard {
     width: 500px;
     border: none;
     border-radius: 20px;
     margin: auto;
     padding: 20px;
-    position: absolute;
-    top: 10%;
-    left: 30%;
-    background-color: red;
+    background-color: rgb(22, 22, 22);
     text-align: center;
 }
 
@@ -120,18 +128,73 @@ body {
 }
 
 .showCard .detailCard .closeBtn {
+    width: 50%;
     border: none;
-    padding: 5px 30px;
+    padding: 10px 30px;
     border-radius: 20px;
     margin-bottom: 10px;
     cursor: pointer;
     transition: 0.3s;
 }
 
-.showCard .detailCard .closeBtn:hover {
+.showCard .contentCard .cardBtns{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+}
+
+.showCard .contentCard .cardBtns .closeBtn:first-child{
     color: #fff;
     background-color: #000;
+}
+
+.showCard .detailCard .closeBtn:hover {
+    color: #fff;
+    background-color: orangered !important;
     transform: translateY(-3px);
+}
+
+.detailCard .contentCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.detailCard img{
+    width: 430px;
+    object-fit: cover;
+    border-radius: 20px;
+    height: 430px;
+    margin-bottom: 20px;
+}
+
+.detailCard p{
+    margin-bottom: 20px;
+}
+
+.detailCard .cardContent {
+    color: #fff;
+    text-align: start;
+}
+
+.detailCard .cardContent h1 {
+    margin: 0;
+    font-weight: 700;
+}
+
+.detailCard .cardContent h4 {
+    font-weight: bolder;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+.detailCard .cardContent p {
+    opacity: 0.7;
+    font-size: 15px;
+    font-weight: normal;
 }
 
 @media screen and (max-width: 600px) {
@@ -140,5 +203,56 @@ body {
         height: 700px;
         top: 60%;
         left: 16%;
+    }
+
+    .showCard {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -2%);
+    }
+
+    .showCard .detailCard {
+        width: 250px;
+        height: max-content;
+    }
+
+    .detailCard img{
+        width: 200px;
+        object-fit: cover;
+        border-radius: 20px;
+        height: 200px;
+        margin-bottom: 34px;
+    }
+
+    .detailCard .cardContent h1 {
+        margin: 0;
+        font-size: 21px;
+        font-weight: 700;
+    }
+    
+    .detailCard .cardContent h4 {
+        font-weight: bolder;
+        opacity: 0.9;
+        font-size: 12px;
+        margin-bottom: 25px;
+    }
+    
+    .detailCard .cardContent p {
+        opacity: 0.7;
+        font-size: 10px;
+        font-weight: normal;
+        margin-bottom: 25px;
+    }
+
+    .showCard .contentCard .cardBtns {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .showCard .detailCard .closeBtn {
+        width: 100%;
+        padding: 10px 30px !important;
     }
 }
