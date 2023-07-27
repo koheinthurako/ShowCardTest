@@ -43,7 +43,7 @@ function createCard(id) {
             </div>
         </div>
     `;
-
+    div.classList.add("animateIn");
     cardBox.append(div);
     box.classList.add("blur");
 
@@ -55,8 +55,13 @@ function createCard(id) {
 }
 
 function delCard() {
-    this.parentNode.parentNode.parentNode.remove();
-    box.classList.remove("blur");
+    let parentBox = this.parentNode.parentNode.parentNode;
+    parentBox.classList.remove("animateIn");
+    parentBox.classList.add("animateOut");
+    setTimeout(() => {
+        parentBox.remove();
+        box.classList.remove("blur");
+    }, 200);
 }
 
 detailBtn.forEach(btn => {
