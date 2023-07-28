@@ -52,6 +52,7 @@ function createCard(id) {
         btn.addEventListener('click', delCard);
     });
 
+    saveNotesToLocalStorage();
 }
 
 function delCard() {
@@ -62,7 +63,28 @@ function delCard() {
         parentBox.remove();
         box.classList.remove("blur");
     }, 200);
+    saveNotesToLocalStorage();
 }
+
+function saveNotesToLocalStorage() {
+    const cards = [];
+    const inputCards = document.querySelector(".detailCard");
+
+    cards.push(inputCards);
+    localStorage.setItem("notes", JSON.stringify(cards));
+}
+
+function loadNotesFromLocalStorage() {
+    const savedNotes = localStorage.getItem("inputCards");
+    if (savedNotes) {
+        const notes = JSON.parse(savedNotes);
+        notes.forEach(note => {
+            createCard(note);
+        });
+    }
+}
+
+loadNotesFromLocalStorage();
 
 detailBtn.forEach(btn => {
         btn.addEventListener('click', () => {
