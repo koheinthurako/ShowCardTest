@@ -52,33 +52,14 @@ function createCard(id) {
     
 
     if(window.innerWidth <= 600) {
-        // console.log("less 600");
         const cardPosX = parentRect.left / 2;
         const cardPosY = parentRect.top / 2;
         div.style.top = `${cardPosY}px`;
         div.style.left = `${cardPosX}px`;
     } else {
-        // console.log("greater");
         div.style.top = "1%";
-        div.style.left = `${window.innerWidth / 3}px`;
-        // div.style.transform = `translate(-50%, -50%)`;
-        // div.style.transform = "translate(-50%, -50%);"
-        // div.style.top = `${window.innerHeight / 2 - div.offsetHeight / 2}px`;
-        // div.style.left = `${window.innerWidth / 2 - div.offsetWidth / 2}px`;
+        div.style.left = `${100 / 3}%`;
     }
-
-    // if (window.innerWidth <= 600) {
-    //     const cardPosX = parentRect.left + parentRect.width / 2 - div.offsetWidth / 2;
-    //     const cardPosY = parentRect.top + parentRect.height / 2 - div.offsetHeight / 2;
-    //     div.style.top = `${cardPosY}px`;
-    //     div.style.left = `${cardPosX}px`;
-    // } else {
-    //     // Desktop environment, display at the center of the document
-    //     div.style.top = `${window.innerHeight / 2 - div.offsetHeight / 2}px`;
-    //     div.style.left = `${window.innerWidth / 2 - div.offsetWidth / 2}px`;
-    // }
-
-    
 
     div.classList.add("animateIn");
     document.body.appendChild(div);
