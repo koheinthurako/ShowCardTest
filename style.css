@@ -95,14 +95,15 @@ body {
     transform: scale(1.03);
 }
 
-.showCard {
+/* .showCard {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -48%);
-}
+} */
 
-.showCard .detailCard {
+.detailCard {
+    margin: auto;
     width: 500px;
     border: none;
     border-radius: 20px;
@@ -110,25 +111,29 @@ body {
     padding: 20px;
     background-color: rgb(22, 22, 22);
     text-align: center;
+    position: fixed;
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-5%, -2%); */
 }
 
-.showCard .detailCard h1 {
+.detailCard h1 {
     color: #fff;
 }
 
-.showCard .detailCard.hide {
+.detailCard.hide {
     display: none;
 }
 
-.showCard .detailCard.show {
+.detailCard.show {
     display: block;
 }
 
-.showCard .detailCard h1 {
+.detailCard h1 {
     margin-bottom: 20px;
 }
 
-.showCard .detailCard .closeBtn {
+.detailCard .closeBtn {
     width: 50%;
     border: none;
     padding: 10px 30px;
@@ -138,19 +143,19 @@ body {
     transition: 0.3s;
 }
 
-.showCard .contentCard .cardBtns{
+.contentCard .cardBtns{
     display: flex;
     gap: 10px;
     width: 100%;
     justify-content: center;
 }
 
-.showCard .contentCard .cardBtns .closeBtn:first-child{
+.contentCard .cardBtns .closeBtn:first-child{
     color: #fff;
     background-color: #000;
 }
 
-.showCard .detailCard .closeBtn:hover {
+.detailCard .closeBtn:hover {
     color: #fff;
     background-color: orangered !important;
     transform: translateY(-3px);
@@ -225,18 +230,28 @@ body {
 }
 
 @media screen and (max-width: 600px) {
-    .showCard {
+    /* .showCard {
         position: absolute;
         top: 70%;
         left: 50%;
         transform: translate(-50%, -1%);
-    }
+    } */
 
-    .showCard .detailCard {
+    /* .detailCard {
         top: 60%;
         left: 16%;
         width: 320px;
         height: max-content;
+    } */
+
+    .detailCard {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        max-width: 500px; /* To limit card width on larger screens */
+        height: auto; /* Adjust as needed based on card content */
     }
 
     .detailCard .contentCard {
@@ -271,13 +286,13 @@ body {
         margin-bottom: 25px;
     }
 
-    .showCard .contentCard .cardBtns {
+    .contentCard .cardBtns {
         display: flex;
         flex-direction: column;
         width: 100%;
     }
 
-    .showCard .detailCard .closeBtn {
+    .detailCard .closeBtn {
         width: 100%;
         padding: 10px 30px !important;
     }
